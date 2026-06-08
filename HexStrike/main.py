@@ -1,34 +1,47 @@
 import subprocess
+import os
 
-print("██╗  ██╗███████╗██╗  ██╗███████╗████████╗██████╗ ██╗██╗  ██╗███████╗\n██║  ██║██╔════╝╚██╗██╔╝██╔════╝╚══██╔══╝██╔══██╗██║██║ ██╔╝██╔════╝\n███████║█████╗   ╚███╔╝ ███████╗   ██║   ██████╔╝██║█████╔╝ █████╗\n██╔══██║██╔══╝   ██╔██╗ ╚════██║   ██║   ██╔══██╗██║██╔═██╗ ██╔══╝\n██║  ██║███████╗██╔╝ ██╗███████║   ██║   ██║  ██║██║██║  ██╗███████╗\n╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝\nCybersecurity Framework v1.0")
+def clear():
+    os.system("cls" if os.name == "nt" else "clear")
 
-menu = """
-[01] ► Reconnaissance
-[02] ► Network Analysis
-[03] ► Web Security
-[04] ► Encryption & Cryptography
-[05] ► AI Modules
-[06] ► Utilities
+def show_ui():
+    print("""
+██╗  ██╗███████╗██╗  ██╗███████╗████████╗██████╗ ██╗██╗  ██╗███████╗
+██║  ██║██╔════╝╚██╗██╔╝██╔════╝╚══██╔══╝██╔══██╗██║██║ ██╔╝██╔════╝
+███████║█████╗   ╚███╔╝ ███████╗   ██║   ██████╔╝██║█████╔╝ █████╗
+██╔══██║██╔══╝   ██╔██╗ ╚════██║   ██║   ██╔══██╗██║██╔═██╗ ██╔══╝
+██║  ██║███████╗██╔╝ ██╗███████║   ██║   ██║  ██║██║██║  ██╗███████╗
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝╚══════╝
+
+Cybersecurity Framework v1.0
+""")
+
+    print("""
+[01] ► Encryption
+[02] ► --
+[03] ► --
+[04] ► --
+[05] ► --
+[06] ► --
 
 [00] ► Exit
+""")
 
-"""
+while True:
+    clear()
+    show_ui()
 
-print(menu)
-
-
-while(1):
     choice = input("Select an option: ")
 
     if choice == "01":
-        subprocess.run(["python", "modules/encryption/caeser.py"])
+        subprocess.run(["python", "modules/encryption/main.py"])
+
     elif choice == "02":
         subprocess.run(["python", "modules/encryption/caeser.py"])
+
     elif choice == "00":
         print("Exiting...")
         break
+
     else:
-        print("Invalid option. Please try again.")
-
-
-
+        input("Invalid option. Press Enter...")
